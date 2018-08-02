@@ -8,6 +8,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  carousel_pro: ^0.0.13
 
 dev_dependencies:
   flutter_test:
@@ -32,6 +33,17 @@ flutter:
           weight: 200
         - asset: fonts/roboto_mono/RobotoMono-Thin.ttf
           weight: 100
+    - family: OpenSans
+      fonts:
+        - asset: fonts/Open_Sans/OpenSans-Regular.ttf
+        - asset: fonts/Open_Sans/OpenSans-Light.ttf
+          weight: 200
+    - family: FlutterIcon
+      fonts:
+        - asset: fonts/FlutterIcon.ttf
+
+  assets:
+    - assets/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

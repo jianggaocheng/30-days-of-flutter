@@ -5,35 +5,35 @@ import 'dart:async';
 
 class Day1Page extends StatefulWidget {
   @override
-  createState() => new Day1PageState();
+  createState() => Day1PageState();
 }
 
 class Day1PageState extends State<Day1Page> {
   String _sectionTime = '00:00.00';
   String _totalTime = '00:00.00';
   int _recordTime = 0;
-  Stopwatch _stopwatch = new Stopwatch();
-  List<String> _recordList = new List();
+  Stopwatch _stopwatch = Stopwatch();
+  List<String> _recordList = List();
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new CupertinoNavigationBar(
-        middle: new Text('A stopwatch'),
+    return Scaffold(
+      appBar: CupertinoNavigationBar(
+        middle: Text('A stopwatch'),
       ),
-      body: new Column(
+      body: Column(
         children: <Widget>[
-          new WatchFace(
+          WatchFace(
             sectionTime: _sectionTime,
             totalTime: _totalTime,
           ),
-          new WatchControl(
+          WatchControl(
             watchOn: _stopwatch.isRunning,
             onLeftBtn: _handleLeftBtn,
             onRightBtn: _handleRightBtn,
           ),
-          new Expanded(
-            child: new WatchRecord(
+          Expanded(
+            child: WatchRecord(
               recordList: _recordList,
             )
           )
@@ -48,7 +48,7 @@ class Day1PageState extends State<Day1Page> {
     } else {
       _stopwatch.start();
 
-      new Timer.periodic(new Duration(milliseconds: 10), (interval) {
+      Timer.periodic(Duration(milliseconds: 10), (interval) {
         var milSecond, second, minute, countingTime, secmilSecond, secsecond, secminute, seccountingTime;
 
         countingTime = _stopwatch.elapsedMilliseconds;
@@ -98,7 +98,7 @@ class WatchFace extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new Container(
+    return Container(
       decoration: BoxDecoration(
         color: Color(0xFFF3F3F3),
         border: Border(bottom: BorderSide(color: Color(0xFFDDDDDD)))
@@ -106,16 +106,16 @@ class WatchFace extends StatelessWidget{
       padding: EdgeInsets.only(top: 30.0),
       alignment: Alignment.center,
       height: 170.0,
-      child: new Column(
+      child: Column(
         children: <Widget>[
-          new Container(
+          Container(
             alignment: Alignment.centerRight,
             padding: EdgeInsets.only(right: 30.0),
-            child: new Text(sectionTime, style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.w100, color: Color(0xFF555555), fontFamily: "RobotoMono")),
+            child: Text(sectionTime, style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.w100, color: Color(0xFF555555), fontFamily: "RobotoMono")),
           ),
-          new Container(
+          Container(
             margin: EdgeInsets.only(top: 10.0),
-            child: new Text(totalTime, style: const TextStyle(fontSize: 70.0, fontWeight: FontWeight.w100, color: Color(0xFF222222), fontFamily: "RobotoMono")),
+            child: Text(totalTime, style: const TextStyle(fontSize: 70.0, fontWeight: FontWeight.w100, color: Color(0xFF222222), fontFamily: "RobotoMono")),
           )
         ],
       ),
@@ -132,7 +132,7 @@ class WatchControl extends StatefulWidget{
   final bool watchOn;
   
   @override
-  createState() => new WatchControlState();
+  createState() => WatchControlState();
 }
 
 class WatchControlState extends State<WatchControl> {
@@ -164,41 +164,41 @@ class WatchControlState extends State<WatchControl> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new Ink(
+    return Ink(
       height: 100.0,
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
         color: Color(0xFFF3F3F3)
       ),
-      child: new Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          new Ink(
+          Ink(
             height: 70.0,
             width: 70.0,
             decoration: BoxDecoration(
               color: Color(0xFFFFFFFF),
               borderRadius: BorderRadius.all(Radius.circular(35.0)),
             ),
-            child: new InkWell(
+            child: InkWell(
               borderRadius: BorderRadius.all(Radius.circular(35.0)),
               onTap: widget.onLeftBtn,
-              child: new Center(
-                child: new Text(stopBtnText),
+              child: Center(
+                child: Text(stopBtnText),
               )
             ), 
           ),
-          new Ink(
+          Ink(
             height: 70.0,
             width: 70.0,
             decoration: BoxDecoration(
               color: Color(0xFFFFFFFF),
               borderRadius: BorderRadius.all(Radius.circular(35.0)),
             ),
-            child: new InkWell(
+            child: InkWell(
               borderRadius: BorderRadius.all(Radius.circular(35.0)),
               onTap: _onRightBtn,
-              child: new Center(
-                child: new Text(startBtnText, style: new TextStyle(color: startBtnColor),),
+              child: Center(
+                child: Text(startBtnText, style: TextStyle(color: startBtnColor),),
               )
             ), 
           ),
@@ -215,24 +215,24 @@ class WatchRecord extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new ListView.builder(
+    return ListView.builder(
       itemCount: recordList.length,
       itemBuilder: (context, index) {
         int targetIndex = recordList.length - index;
         
-        return new Container(
+        return Container(
           height: 40.0,
           padding: EdgeInsets.only(top: 5.0, left: 30.0, right: 30.0, bottom: 5.0),
-          decoration: new BoxDecoration(
+          decoration: BoxDecoration(
             border: BorderDirectional(bottom: BorderSide(color: Color(0xFFBBBBBB)))
           ),
-          child: new Row(
+          child: Row(
             children: <Widget>[
-              new Container(
-                child: new Text( '计次 $targetIndex', style: new TextStyle(color: Color(0xFF777777)),),
+              Container(
+                child: Text( '计次 $targetIndex', style: TextStyle(color: Color(0xFF777777)),),
               ),
-              new Expanded(
-                child: new Text(recordList[targetIndex - 1], textAlign: TextAlign.right, style: new TextStyle(color: Color(0xFF222222), fontFamily: "RobotoMono"),),
+              Expanded(
+                child: Text(recordList[targetIndex - 1], textAlign: TextAlign.right, style: TextStyle(color: Color(0xFF222222), fontFamily: "RobotoMono"),),
               )
             ],
           )
