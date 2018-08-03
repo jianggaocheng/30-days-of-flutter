@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_demos_gallery/utils/carousel.dart';
-import 'package:flutter_demos_gallery/utils/flutter_icon_icons.dart';
 import 'dart:convert';
 
 class Day2Page extends StatelessWidget {
-  var _weatherData = jsonDecode('''
+  final _weatherData = jsonDecode('''
 [{
 	"key": 0,
 	"city": "苏州市",
@@ -191,25 +190,25 @@ class Day2Page extends StatelessWidget {
 	}, {
 		"key": 22,
 		"day": "星期二",
-		"icon": "0xe823",
+		"icon": "0xe81a",
 		"high": 22,
 		"low": 14
 	}, {
 		"key": 23,
 		"day": "星期三",
-		"icon": "0xe823",
+		"icon": "0xe81a",
 		"high": 21,
 		"low": 11
 	}, {
 		"key": 24,
 		"day": "星期四",
-		"icon": "0xe823",
+		"icon": "0xe81a",
 		"high": 12,
 		"low": 8
 	}, {
 		"key": 25,
 		"day": "星期五",
-		"icon": "0xe823",
+		"icon": "0xe81a",
 		"high": 9,
 		"low": 7
 	}, {
@@ -221,7 +220,7 @@ class Day2Page extends StatelessWidget {
 	}, {
 		"key": 27,
 		"day": "星期日",
-		"icon": "0xe823",
+		"icon": "0xe81a",
 		"high": 17,
 		"low": 13
 	}, {
@@ -237,7 +236,7 @@ class Day2Page extends StatelessWidget {
 		"high": 22,
 		"low": 17
 	}],
-	"info": "今天：今天大部多云。现在气温 15°；最高气温23°。",
+	"info": "今天：有暴雨，能见度低。最高气温29°。今晚局部多云，最低气温27°。",
 	"rise": "06:21",
 	"down": "18:06",
 	"prop": "10%",
@@ -434,25 +433,25 @@ class Day2Page extends StatelessWidget {
 	}, {
 		"key": 22,
 		"day": "星期二",
-		"icon": "0xe823",
+		"icon": "0xe81a",
 		"high": 22,
 		"low": 14
 	}, {
 		"key": 23,
 		"day": "星期三",
-		"icon": "0xe823",
+		"icon": "0xe81a",
 		"high": 21,
 		"low": 11
 	}, {
 		"key": 24,
 		"day": "星期四",
-		"icon": "0xe823",
+		"icon": "0xe81a",
 		"high": 12,
 		"low": 8
 	}, {
 		"key": 25,
 		"day": "星期五",
-		"icon": "0xe823",
+		"icon": "0xe81a",
 		"high": 9,
 		"low": 7
 	}, {
@@ -464,7 +463,7 @@ class Day2Page extends StatelessWidget {
 	}, {
 		"key": 27,
 		"day": "星期日",
-		"icon": "0xe823",
+		"icon": "0xe81a",
 		"high": 17,
 		"low": 13
 	}, {
@@ -499,14 +498,21 @@ class Day2Page extends StatelessWidget {
     print('_weatherData $_weatherData');
 
     return Scaffold(
-      body: SingleChildScrollView(
+      body: Container(
         child: Carousel(
-          children: _weatherData.map((city) => 
+          children: _weatherData.map((city) =>
              WeatherPage(
                cityData: city
              )
           ).toList(),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Back', // used by assistive technologies
+        child: Icon(Icons.arrow_back),
+        onPressed: (){
+          Navigator.pop(context);
+        },
       ),
     );
   }
@@ -524,115 +530,293 @@ class WeatherPage extends StatelessWidget {
       alignment: Alignment.center,
         child: Column(
           children: <Widget>[
-            Container(child: Text(hourElem['time'], style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 15.0))),
-            Expanded(child: Icon(IconData(int.parse(hourElem['icon']), fontFamily: 'FlutterIcon'), color: Color(int.parse(hourElem['color'])))),
-            Container(child: Text(hourElem['degree'], style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 16.0))),
+            Container(
+              child: Text(
+                hourElem['time'],
+                style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 15.0)
+              )
+            ),
+            Expanded(
+              child: Icon(
+                IconData(
+                  int.parse(hourElem['icon']), fontFamily: 'FlutterIcon'),
+                  color: Color(int.parse(hourElem['color'])
+                )
+              )
+            ),
+            Container(
+              child: Text(
+                hourElem['degree'],
+                style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 16.0)
+              )
+            ),
           ],
         ),
       )
     ).toList();
 
     List<Widget> dayViewList = cityData['days'].map<Widget>((dayElem) => Container(
+      height: 28.0,
+      padding: EdgeInsets.only(left: 20.0, right: 20.0),
         child: Row(
           children: <Widget>[
-            Container(child: Text(dayElem['day'], style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 15.0))),
-            Icon(IconData(int.parse(dayElem['icon']), fontFamily: 'FlutterIcon')),
-            Container(child: Row(children: <Widget>[
-              Text('${dayElem['high']}', style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 16.0)),
-              Text('${dayElem['low']}', style: cityData['night'] ? TextStyle(color: Color(0xFFFFFFFF), fontSize: 16.0): TextStyle(color: Color(0xFFFFFFFF), fontSize: 16.0)),
-            ])) 
+            Container(
+              child: Text(
+                dayElem['day'],
+                style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 15.0)
+              )
+            ),
+            Expanded(
+              child: Container(
+                alignment: Alignment.center,
+                child: Icon(
+                  IconData(int.parse(dayElem['icon']), fontFamily: 'FlutterIcon'),
+                  color: Color(0xFFFFFFFF)
+                )
+              )
+            ),
+            Container(
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    width: 35.0,
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      '${dayElem['high']}',
+                      style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 16.0)
+                    )
+                  ),
+                  Container(
+                    width: 35.0,
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      '${dayElem['low']}',
+                      style: cityData['night'] ?
+                        TextStyle(color: Color(0xFFAAAAAA), fontSize: 16.0):
+                        TextStyle(color: Color(0xFFEEEEEE), fontSize: 16.0)
+                    )
+                  ),
+                ]
+              )
+            )
           ],
         ),
       )
     ).toList();
 
-    // TODO: implement build
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/${cityData['bg']}'),
-          fit: BoxFit.cover
-        )
-      ),
-      child: Container(
-        padding: EdgeInsets.only(top: 20.0),
-        child: Column(
-          children: <Widget>[
-            // headInfo
-            Container(
-              padding: EdgeInsets.only(top: 70.0, bottom: 60.0),
-              child: Column(
-                children: <Widget>[
-                  Text(cityData['city'], style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 32.0),),
-                  Text(cityData['abs'], style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 15.0)),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                    Text('${cityData['degree']}', style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 85.0, letterSpacing: -5.0,fontFamily: 'OpenSans', fontWeight: FontWeight.w100),),
-                    Container(
-                      padding: EdgeInsets.only(top: 25.0),
-                      child: Text('°', style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 35.0, fontWeight: FontWeight.w300),),
-                    )
-                  ],)
-                ],
+    Widget weatherOther(String title, String value) {
+      return Expanded(
+        flex: 1,
+        child: Container(
+          height: 55.0,
+          
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              new Container(
+                child: Text(title,  style: TextStyle(color: Color(0xBBFFFFFF), fontSize: 12.0,fontWeight: FontWeight.w400)),
               ),
+              new Container(
+                child: Text(value, style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 24.0)),
+              ),
+            ],
+          )
+        )
+      );
+    }
+
+    // TODO: implement build
+    return new LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints viewportConstraints) {
+        return SingleChildScrollView(
+          child: new ConstrainedBox(
+            constraints: new BoxConstraints(
+              minHeight: viewportConstraints.maxHeight,
             ),
-            // withinDay
-            Container(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
+            child: new IntrinsicHeight(
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/${cityData['bg']}'),
+                    fit: BoxFit.cover
+                  )
+                ),
+                child: Container(
+                  padding: EdgeInsets.only(top: 20.0),
+                  child: Column(
+                    children: <Widget>[
+                      // headInfo
+                      Container(
+                        padding: EdgeInsets.only(top: 70.0, bottom: 60.0),
+                        child: Column(
                           children: <Widget>[
-                            Container(width: 60.0, child: Text(cityData['today']['week'], style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 18.0, fontWeight: FontWeight.w400))),
-                            Container(width: 50.0, child: Text(cityData['today']['day'], style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 15.0))),
+                            Text(cityData['city'], style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 32.0),),
+                            Text(cityData['abs'], style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 15.0)),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  '${cityData['degree']}',
+                                  style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 85.0, letterSpacing: -5.0, fontFamily: 'OpenSans', fontWeight: FontWeight.w100)
+                                ),
+                                Container(
+                                  padding: EdgeInsets.only(top: 25.0),
+                                  child: Text('°', style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 35.0, fontWeight: FontWeight.w300),),
+                                )
+                            ],)
                           ],
                         ),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                      ),
+                      // withinDay
+                      Container(
+                        child: Column(
                           children: <Widget>[
-                            Container(width: 30.0, child: Text('${cityData['today']['high']}', style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 18.0, fontWeight: FontWeight.w200)),),
-                            Container(width: 30.0, child: Text('${cityData['today']['low']}', style: TextStyle(color: cityData['night'] ? Color(0xFFAAAAAA) : Color(0xFFEEEEEE), fontSize: 18.0, fontWeight: FontWeight.w200)),)
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 20.0),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: <Widget>[
+                                      Container(width: 60.0, child: Text(cityData['today']['week'], style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 18.0, fontWeight: FontWeight.w400))),
+                                      Container(width: 50.0, child: Text(cityData['today']['day'], style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 15.0))),
+                                    ],
+                                  ),
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: <Widget>[
+                                      Container(width: 30.0, child: Text('${cityData['today']['high']}', style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 18.0, fontWeight: FontWeight.w200)),),
+                                      Container(width: 30.0, child: Text('${cityData['today']['low']}', style: TextStyle(color: cityData['night'] ? Color(0xFFAAAAAA) : Color(0xFFEEEEEE), fontSize: 18.0, fontWeight: FontWeight.w200)),)
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                            Container(
+                              height: 100.0,
+                              margin: EdgeInsets.only(top: 5.0),
+                              padding: EdgeInsets.all(10.0),
+                              decoration: BoxDecoration(
+                                border: Border(top: BorderSide(color: Color(0xB3FFFFFF), width: 0.5), bottom: BorderSide(color: Color(0xB3FFFFFF), width: 0.5)),
+                              ),
+                              child: ListView(
+                                scrollDirection: Axis.horizontal,
+                                children: hourViewList,
+                              ),
+                            ),
                           ],
-                        )
-                      ],
-                    ),
+                        ),
+                      ),
+                      // dayInWeek
+                      Container(
+                        margin: EdgeInsets.only(top: 5.0),
+                        padding: EdgeInsets.all(10.0),
+                        child: Column(
+                          children: dayViewList,
+                        ),
+                      ),
+                      // weatherInfo
+                      Container(
+                        margin: EdgeInsets.only(top: 5.0),
+                        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                        decoration: BoxDecoration(
+                          border: BorderDirectional(
+                            top: BorderSide(color: Color(0xB3FFFFFF), width: 0.5),
+                            bottom: BorderSide(color: Color(0xB3FFFFFF), width: 0.5),
+                          )
+                        ),
+                        child: Text(
+                          cityData['info'],
+                          style: TextStyle(color: Color(0xFFFFFFFF), fontSize: 15.0),
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.symmetric(horizontal: 20.0),
+                              padding: EdgeInsets.symmetric(vertical: 10.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  weatherOther('日出', cityData['rise']),
+                                  weatherOther('日落', cityData['down']),
+                              ]),
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(horizontal: 20.0),
+                              padding: EdgeInsets.symmetric(vertical: 10.0),
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  top: BorderSide(color: Color(0xB3FFFFFF), width: 0.5), 
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  weatherOther('降雨概率', cityData['prop']),
+                                  weatherOther('湿度', cityData['humi']),
+                              ]),
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(horizontal: 20.0),
+                              padding: EdgeInsets.symmetric(vertical: 10.0),
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  top: BorderSide(color: Color(0xB3FFFFFF), width: 0.5), 
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  weatherOther('风速', cityData['speed']),
+                                  weatherOther('体感温度', cityData['feel']),
+                              ]),
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(horizontal: 20.0),
+                              padding: EdgeInsets.symmetric(vertical: 10.0),
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  top: BorderSide(color: Color(0xB3FFFFFF), width: 0.5), 
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  weatherOther('降水量', cityData['rain']),
+                                  weatherOther('气压', cityData['pres']),
+                              ]),
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(horizontal: 20.0),
+                              padding: EdgeInsets.symmetric(vertical: 10.0),
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  top: BorderSide(color: Color(0xB3FFFFFF), width:  0.5), 
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  weatherOther('能见度', cityData['sight']),
+                                  weatherOther('紫外线指数', cityData['uv']),
+                              ]),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
-                  Container(
-                    height: 100.0,
-                    margin: EdgeInsets.only(top: 5.0),
-                    padding: EdgeInsets.all(10.0),
-                    decoration: BoxDecoration(
-                      border: Border(top: BorderSide(color: Color(0xB3FFFFFF)), bottom: BorderSide(color: Color(0xB3FFFFFF))),
-                    ),
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: hourViewList,
-                    ), 
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 5.0),
-                    padding: EdgeInsets.all(10.0),
-                    // decoration: BoxDecoration(
-                    //   border: Border(top: BorderSide(color: Color(0xB3FFFFFF)), bottom: BorderSide(color: Color(0xB3FFFFFF))),
-                    // ),
-                    child: ListView(
-                      children: hourViewList,
-                    ), 
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
+                ),
+              )
+            ),
+          ),
+        );
+      },
     );
   }
 }
