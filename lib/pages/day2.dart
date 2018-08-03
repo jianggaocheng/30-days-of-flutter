@@ -495,8 +495,6 @@ class Day2Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('_weatherData $_weatherData');
-
     return Scaffold(
       body: Container(
         child: Carousel(
