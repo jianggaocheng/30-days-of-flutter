@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_demos_gallery/utils/flutter_icon_icons.dart';
 import 'package:flutter_demos_gallery/pages/day1.dart';
 import 'package:flutter_demos_gallery/pages/day2.dart';
+import 'package:flutter_demos_gallery/pages/day3.dart';
 
 class HomePage extends StatelessWidget {
-  Widget menuIcons (BuildContext context, IconData iconData ,Widget nextPage) {
+  Widget menuIcons (BuildContext context, Icon icon,String title, Widget nextPage) {
     return Container(
       decoration: BoxDecoration(
         border: BorderDirectional(
@@ -20,7 +22,19 @@ class HomePage extends StatelessWidget {
           ),);
         },
         child: Center(
-          child: Icon(iconData, size: 40.0,),
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              icon,
+              Container(
+                margin: EdgeInsets.only(top: 10.0),
+                child:  Text(
+                  title
+                )
+              )
+            ],
+          )
+          
         )
       )
     );
@@ -36,8 +50,9 @@ class HomePage extends StatelessWidget {
         primary: false,
         crossAxisCount: 3,
         children: <Widget>[
-          menuIcons(context, const IconData(0xf2FD, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage), Day1Page()),
-          menuIcons(context, const IconData(0xf475, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage), Day2Page())
+          menuIcons(context, Icon(FontAwesomeIcons.stopwatch, size: 48.0, color: Color(0xFFFF856C)), 'Day1' ,Day1Page()),
+          menuIcons(context, Icon(FlutterIcon.cloud_sun_inv, size: 48.0, color: Color(0xFF90BDC1)), 'Day2' ,Day2Page()),
+          menuIcons(context, Icon(FontAwesomeIcons.twitter, size: 48.0, color: Color(0xFF2AA2EF)), 'Day3' ,Day3Page()),
         ],
       ),
       backgroundColor: Colors.white,
