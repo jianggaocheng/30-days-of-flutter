@@ -8,6 +8,10 @@ This project is inspired by
 An IOS-system-like stop watch.  
 Fully functioned as the system app.  
 
+![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day1.gif)
+
 #### Day 2
 An IOS-system-like weather app.
 The animation is partially done.
+
+![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day2.gif)
