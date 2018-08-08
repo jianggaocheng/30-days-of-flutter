@@ -9,7 +9,7 @@ class Day5Page extends StatelessWidget {
 
   Day5Page() {
     if (!setKey) {
-      MapView.setApiKey("AIzaSyBNZwuLkMDevx8S84L11r7EhSLjDPntfVk");
+      MapView.setApiKey("<Your secrect key>");
       setKey = true;
     }
   }
