@@ -352,6 +352,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.41"
+  throttle_debounce:
+    dependency: "direct main"
+    description:
+      name: throttle_debounce
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2+1"
   typed_data:
     dependency: transitive
     description:

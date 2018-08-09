@@ -11,6 +11,7 @@ dependencies:
   font_awesome_flutter: any
   map_view: any
   location: ^1.3.4
+  throttle_debounce: ^0.1.2+1
 
 dev_dependencies:
   flutter_test:
