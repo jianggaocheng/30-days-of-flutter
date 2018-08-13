@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-class Day4Page extends StatelessWidget {
+class Day0Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CupertinoNavigationBar(
-        middle: Text('A stopwatch'),
+        middle: Text('TO BE UPDATED'),
       ),
       body: Container(
         child: Center(
-          child: Text('test'),
+          child: Text('TO BE UPDATED'),
         )
       ),
     );

@@ -4,7 +4,7 @@ import 'package:map_view/map_view.dart';
 import 'package:location/location.dart' as location;
 
 class Day5Page extends StatelessWidget {
-  var _location = location.Location();
+  final _location = location.Location();
   static bool setKey = false;
 
   Day5Page() {

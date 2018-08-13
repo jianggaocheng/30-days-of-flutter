@@ -62,7 +62,7 @@ class Day7PageState extends State<Day7Page> {
                 ),
               ),
               Positioned(
-                child: Icon(FontAwesomeIcons.basketballBall, size: ballSize, color: Colors.white70,),
+                child: Icon(FontAwesomeIcons.baseballBall, size: ballSize, color: Colors.white70,),
                 left: ballLeft,
                 top: ballTop,
               )
