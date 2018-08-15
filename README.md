@@ -41,3 +41,8 @@ Pan gesture basic. Move a baseball around.
 Google map style swipe menu
 
 ![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day8.gif)
+
+#### Day9
+Layout of Twitter user page
+
+![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day9.gif)
