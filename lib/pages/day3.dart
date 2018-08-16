@@ -26,7 +26,6 @@ class EntranceState extends State<Entrance> with SingleTickerProviderStateMixin 
   Animation<double> animation;
   Animation<double> opacityAnimation;
   AnimationController controller;
-  AnimationController opacityController;
 
   initState() {
     super.initState();
