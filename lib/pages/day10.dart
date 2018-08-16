@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 
 class Day10Page extends StatefulWidget {
   @override
@@ -64,6 +65,8 @@ class Day10PageState extends State<Day10Page> with SingleTickerProviderStateMixi
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
     return Scaffold(
       body: Stack(
         children: <Widget>[
