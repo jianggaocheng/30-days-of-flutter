@@ -10,11 +10,14 @@ PODS:
   - map_view (0.0.12):
     - Flutter
     - GoogleMaps
+  - video_player (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
   - location (from `.symlinks/plugins/location/ios`)
   - map_view (from `.symlinks/plugins/map_view/ios`)
+  - video_player (from `.symlinks/plugins/video_player/ios`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -27,12 +30,15 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/location/ios"
   map_view:
     :path: ".symlinks/plugins/map_view/ios"
+  video_player:
+    :path: ".symlinks/plugins/video_player/ios"
 
 SPEC CHECKSUMS:
   Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   location: 26c90953ad5916331d0d1d913898779910416487
   map_view: 4a71319ae78b6fb4c20813224b8c6e256703ff9b
+  video_player: 906796a841943c8d370ac7c13b18039aa9b56498
 
 PODFILE CHECKSUM: 1e5af4103afd21ca5ead147d7b81d06f494f51a2
 
