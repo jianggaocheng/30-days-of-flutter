@@ -130,7 +130,7 @@ class Day6Page extends StatelessWidget {
                       color: Color(0xFF29B859),
                     ),
                     child: InkWell(
-                      child: Text('LOG IN', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 14.0)),
+                      child: Text('SIGN UP', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 14.0)),
                     ),
                   ),
                 ),
