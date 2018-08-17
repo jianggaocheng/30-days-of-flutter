@@ -31,7 +31,9 @@ Google Map view and find Geo location.
 ![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day5.webp)
 
 #### Day6
-TO BE UPDATED
+Spotify welcome screen
+
+![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day6.webp)
 
 #### Day7
 Pan gesture basic. Move a baseball around.
