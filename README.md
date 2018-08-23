@@ -36,7 +36,7 @@ The Twitter app entrance animation.
 TO BE UPDATED
 
 #### Day5
-!!! You need to get a google api key from https://console.developers.google.com/
+!!! You need to get a google api key from https://console.developers.google.com/  
 Google Map view and find Geo location.
 
 ![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day5.webp)
@@ -65,3 +65,10 @@ Layout of Twitter user page
 Tumblr menu animation
 
 ![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day10.webp)
+
+#### Day11
+Canvas
+
+![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day11.webp)
+
+
