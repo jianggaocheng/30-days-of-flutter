@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:throttle_debounce/throttle_debounce.dart';
+import 'package:flutter_demos_gallery/utils/throttle_debounce.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Day7Page extends StatefulWidget {

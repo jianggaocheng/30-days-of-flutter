@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:throttle_debounce/throttle_debounce.dart';
+import 'package:flutter_demos_gallery/utils/throttle_debounce.dart';
 
 class Day9Page extends StatefulWidget {
   @override
@@ -247,7 +247,7 @@ class UserPageState extends State<UserPage> {
                       child: Row(
                         children: <Widget> [
                           Text('830k', style: TextStyle(color: Color(0xFF292F33), fontWeight: FontWeight.w500),),
-                          Text('关注着', style: TextStyle(color: Color(0xFF95A4AE))),
+                          Text('关注者', style: TextStyle(color: Color(0xFF95A4AE))),
                         ]
                       )
                     )
@@ -258,7 +258,7 @@ class UserPageState extends State<UserPage> {
           )
         ),
         Container(
-          child: SegmentedControl(
+          child: CupertinoSegmentedControl(
             key: Key('segmented'),
             groupValue: _segmentIndex,
             onValueChanged: (index){
@@ -298,6 +298,6 @@ class UserPageState extends State<UserPage> {
       body:  Stack(
         children: stackList
       )
-    );;
+    );
   }
 }

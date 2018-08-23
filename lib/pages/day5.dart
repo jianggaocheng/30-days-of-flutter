@@ -26,7 +26,7 @@ class Day5Page extends StatelessWidget {
     
     //Add a method to call to show the map.
     void showMap() async {
-      var currentLocation = await _location.getLocation;
+      var currentLocation = await _location.getLocation();
 
       print(currentLocation);
 
