@@ -13,6 +13,7 @@ import 'package:flutter_demos_gallery/pages/day8.dart';
 import 'package:flutter_demos_gallery/pages/day9.dart';
 import 'package:flutter_demos_gallery/pages/day10.dart';
 import 'package:flutter_demos_gallery/pages/day11.dart';
+import 'package:flutter_demos_gallery/pages/day12.dart';
 
 class HomePage extends StatelessWidget {
   Widget menuIcons (BuildContext context, Icon icon,String title, Widget nextPage) {
@@ -69,6 +70,7 @@ class HomePage extends StatelessWidget {
           menuIcons(context, Icon(FontAwesomeIcons.twitterSquare, size: 48.0, color: Color(0xFF2AA2EF)), 'Day9' ,Day9Page()),
           menuIcons(context, Icon(FontAwesomeIcons.tumblr, size: 48.0, color: Color(0xFF37465C)), 'Day10' ,Day10Page()),
           menuIcons(context, Icon(Icons.filter_b_and_w, size: 48.0, color: Color(0xFF2F3600)), 'Day11' ,Day11Page()),
+          menuIcons(context, Icon(FontAwesomeIcons.chartBar, size: 48.0, color: Color(0xFFFD8F9D)), 'Day12' ,Day12Page()),
         ],
       ),
       backgroundColor: Colors.white,
