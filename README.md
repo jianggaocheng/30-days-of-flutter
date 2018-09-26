@@ -5,10 +5,10 @@ This project is inspired by
 30 days of React Native (https://github.com/fangwei716/30-days-of-react-native) 
 
 #### Environment
-Flutter 0.5.8 • channel dev • https://github.com/flutter/flutter.git  
-Framework • revision e4b989bf3d (8 days ago) • 2018-08-09 09:45:44 -0700  
-Engine • revision 3777931801  
-Tools • Dart 2.0.0-dev.69.5.flutter-eab492385c  
+Flutter 0.9.3 • channel dev • https://github.com/flutter/flutter.git
+Framework • revision eed8c7ad07 (5 days ago) • 2018-09-20 16:30:07 -0700
+Engine • revision 71457a67d0
+Tools • Dart 2.1.0-dev.5.0.flutter-c688d0c0c3
 
 #### Installation
 1. ``` git clone git@github.com:jianggaocheng/30-days-of-flutter.git ```
