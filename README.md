@@ -72,8 +72,14 @@ Canvas
 ![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day11.webp)
 
 #### Day12
-Charts with Flutter
+Charts with Flutter  
 Reference: https://github.com/google/charts
 
 ![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day12.webp)
+
+#### Day13
+A tweet UI  
+
+![image](https://raw.githubusercontent.com/jianggaocheng/30-days-of-flutter/master/screenshot/day13.webp)
+
 
