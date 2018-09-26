@@ -15,6 +15,8 @@ dependencies:
   flutter_simple_video_player: ^0.0.6
   flutter_swiper: ^1.0.4
   charts_flutter: ^0.4.0
+  dart2_constant: ^1.0.2+dart2
+  image_picker: ^0.4.10
 
 dev_dependencies:
   

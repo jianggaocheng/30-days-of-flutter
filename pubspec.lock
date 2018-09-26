@@ -44,7 +44,7 @@ packages:
     source: hosted
     version: "0.1.2"
   dart2_constant:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: dart2_constant
       url: "https://pub.dartlang.org"
@@ -61,7 +61,7 @@ packages:
       name: flutter_map
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.0"
+    version: "0.1.4"
   flutter_simple_video_player:
     dependency: "direct main"
     description:
@@ -75,7 +75,7 @@ packages:
       name: flutter_swiper
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4"
+    version: "1.1.2"
   font_awesome_flutter:
     dependency: "direct main"
     description:
@@ -83,6 +83,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "8.0.1"
+  image_picker:
+    dependency: "direct main"
+    description:
+      name: image_picker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.10"
   intl:
     dependency: transitive
     description:
@@ -93,12 +100,10 @@ packages:
   latlong:
     dependency: transitive
     description:
-      path: "."
-      ref: dart2
-      resolved-ref: a6ee93d580a682eac03cdb0788df72779ad73244
-      url: "git://github.com/johnpryan/dart-latlong.git"
-    source: git
-    version: "0.5.3"
+      name: latlong
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.1"
   location:
     dependency: "direct main"
     description:
@@ -147,7 +152,7 @@ packages:
       name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.29.0+2"
+    version: "2.0.0+1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -160,6 +165,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.3"
+  transformer_page_view:
+    dependency: transitive
+    description:
+      name: transformer_page_view
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.9"
   transparent_image:
     dependency: transitive
     description:
@@ -187,7 +199,7 @@ packages:
       name: uri
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.3"
+    version: "0.11.3+1"
   utf:
     dependency: transitive
     description:
@@ -215,7 +227,7 @@ packages:
       name: video_player
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.4"
+    version: "0.6.5"
 sdks:
   dart: ">=2.0.0 <3.0.0"
   flutter: ">=0.2.5 <2.0.0"
