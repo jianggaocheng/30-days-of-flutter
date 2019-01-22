@@ -15,6 +15,10 @@ import 'package:flutter_demos_gallery/pages/day10.dart';
 import 'package:flutter_demos_gallery/pages/day11.dart';
 import 'package:flutter_demos_gallery/pages/day12.dart';
 import 'package:flutter_demos_gallery/pages/day13.dart';
+import 'package:flutter_demos_gallery/pages/day14.dart';
+import 'package:flutter_demos_gallery/pages/day15.dart';
+
+
 
 
 class HomePage extends StatelessWidget {
@@ -74,7 +78,8 @@ class HomePage extends StatelessWidget {
           menuIcons(context, Icon(Icons.filter_b_and_w, size: 48.0, color: Color(0xFF2F3600)), 'Day11' ,Day11Page()),
           menuIcons(context, Icon(FontAwesomeIcons.chartBar, size: 48.0, color: Color(0xFFFD8F9D)), 'Day12' ,Day12Page()),
           menuIcons(context, Icon(Icons.chat, size: 48.0, color: Color(0xFF83709D)), 'Day13' ,Day13Page()),
-
+          menuIcons(context, Icon(FontAwesomeIcons.fire, size: 48.0, color: Color(0xFFFF6B6B)), 'Day14' ,Day14Page()),
+          menuIcons(context, Icon(FontAwesomeIcons.calendar, size: 48.0, color: Color(0xFFEC240E)), 'Day15' ,Day15Page()),
         ],
       ),
       backgroundColor: Colors.white,

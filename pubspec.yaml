@@ -17,6 +17,7 @@ dependencies:
   charts_flutter: ^0.4.0
   dart2_constant: ^1.0.2+dart2
   image_picker: ^0.4.10
+  intl: ^0.15.7
 
 dev_dependencies:
   
