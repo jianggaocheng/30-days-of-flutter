@@ -15,7 +15,7 @@ class Day6Page extends StatelessWidget {
         children: <Widget>[
           IgnorePointer(
             child: Container(
-              child: AssetVideo("assets/moments.mp4"),
+              child: SimpleViewPlayer("assets/moments.mp4"),
             )
           ),
           Positioned(

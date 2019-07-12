@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:map_view/map_view.dart';
+import 'package:cirrus_map_view/map_view.dart';
 import 'package:location/location.dart' as location;
 
 class Day5Page extends StatelessWidget {
